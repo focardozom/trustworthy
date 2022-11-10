@@ -22,6 +22,6 @@ To model this probability, we can use the **Bayes theorem:**
 * **P(A)** = Drug use prevalence.
 * **P(B)** = Say yes in the questionnaire.
 
-Visit the app [here](https://www.shinyapps.io/admin/#/application/6516358)
+Visit the app [here](https://francisco-cardozo.shinyapps.io/thrusworthy/)
 
 
