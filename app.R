@@ -12,15 +12,24 @@ library(tidyverse)
 library(markdown)
 library(plotly)
 library(scales)
+library(bslib)
 
 # Define UI for application that draws a histogram
+
 ui <- fluidPage(
+ theme = bs_theme(
+    bg = "#f0f8ff", fg = "black", primary = "#9966cc",
+    base_font = font_google("Dosis"),
+    code_font = font_google("Dosis")
+  ),
         mainPanel(
-          fluidRow(includeMarkdown("Text.md"),
-                   withMathJax()
+          fluidRow(includeMarkdown("Text_start.md")),
+          fluidRow(includeMarkdown("formula.md"),
+                   withMathJax()),
+          fluidRow(includeMarkdown("Text_end.md"),
                    ),
-          fluidRow(
-            h2("First scenario: almost nobody lies"),
+          h2("First scenario: almost nobody lies"),
+          fixedRow(
             column(4,
                    sliderInput("deniers",
                       "Deniers: say not, but yes",
@@ -38,12 +47,10 @@ ui <- fluidPage(
                    )
             ),
           br(),
-          fluidRow(
           " In settings where drug use is rare, the trust is around 90%. However, after 10% of prevalence, the trust is 99%. ",
-          ),
           br(),
-          fluidRow(
-            h2("Second scenario: almost everybody lies"),
+          h2("Second scenario: almost everybody lies"),
+          fixedRow(
             column(4,
                    sliderInput("deniers2",
                                "Deniers: say not, but yes",
@@ -58,15 +65,15 @@ ui <- fluidPage(
             column(8,
                    plotlyOutput("plot2")
                    )),
-          fluidRow(
+          fixedRow(
           "In this setting, the trust is very close to 0%. In settings where the prevalence of drug is 99%, 
           trust increase slightly to 0.09."),
           br(),
-          fluidRow(
+          fixedRow(
           "What happen when the denniers and braggers are 50%?"
           ),
           br(),
-          fluidRow(
+          fixedRow(
           "Play with the parameters and see how the propotion of liers
           in your survey afect your trustwhorty"),
           br(),
@@ -118,27 +125,34 @@ server <- function(input, output) {
   output$plot1 <- renderPlotly({
     
       gr <- ggplot(df(), aes(prevalence, trust, group=group)) +
-      geom_line() +
+      geom_line(size=1.2, color="#9966cc") +
       scale_y_continuous(breaks=seq(0,1,0.1), 
                          limits = c(0,1)) +
       scale_x_continuous(labels = scales::percent,
                          breaks = seq(0,1,0.15)) +
       labs(x="Drug prevalence (prevalence)",
-           y="Trust")
-        
+           y="Trust") +
+        theme_minimal() +
+        theme(plot.background = element_rect(fill = '#f0f8ff'), 
+              panel.background = element_rect(fill = '#f0f8ff'),
+              panel.grid.major = element_line(colour = "grey90"))
       ggplotly(gr)
   })
   
     output$plot2 <- renderPlotly({
       
       gr <- ggplot(df2(), aes(prevalence, trust, group=group)) +
-        geom_line() +
+        geom_line(size=1.2, color="#9966cc") +
         scale_y_continuous(breaks=seq(0,1,0.1), 
                            limits = c(0,1)) +
         scale_x_continuous(labels = scales::percent,
                            breaks = seq(0,1,0.15)) +
         labs(x="Drug prevalence (prevalence)",
-             y="Trust")
+             y="Trust") +
+        theme_minimal() +
+        theme(plot.background = element_rect(fill = '#f0f8ff'), 
+              panel.background = element_rect(fill = '#f0f8ff'),
+              panel.grid.major = element_line(colour = "grey90"))
       
       ggplotly(gr)
   })

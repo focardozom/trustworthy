@@ -8,29 +8,10 @@ Confidence in students' survey responses is commonly questioned when performing 
 It is crucial to understand how this reporting bias affects the validity of our measurements and research findings. Therefore, we propose the following app to understand how proportions of deniers, braggers, and drug use prevalence can influence confidence levels in self-reported measures collected in adolescents. 
 
 
-* **True prevalence:** number of students using a drug divided by the entire population.  
+* **True prevalence:** number of students using a drug divided by the  population.  
 * **Deniers:** students who say they have not used a drug but used it. 
-* **Braggers:**students who say they have used a drug but actually never use it. 
+* **Braggers:** students who say they have used a drug but actually never use it. 
 
-Given the information above, we can estimate the probability of a student's drug use behavior if they respond Yes or No to a drug use question. 
+Given the information above, we can estimate the probability of a student's drug use behavior if they respond **Yes** or **No** to a drug use question.  
  
 To model this probability, we can use the **Bayes theorem:**
-
-\begin{equation}
-\label{eq:bayesa}
-P(A | B) = P(A) \frac{P(B | A)}{P(B)}
-\end{equation}
-
-Replace our variables of interest:
-
-* **P(A|B)** = Drug use given they say yes in the questionnaire.
-* **P(B|A)** = Say yes given that they have used drugs.
-* **P(A)** = Drug use prevalence.
-* **P(B)** = Say yes in the questionnaire.
-
-Ahead are two different simulated scenarios to understand how the trust in student responses changes. Follow the two scenarios to see two extreme cases, and then play with the number of deniers and braggers in your study population. 
-
-
-
-
-
