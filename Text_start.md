@@ -15,3 +15,17 @@ It is crucial to understand how this reporting bias affects the validity of our 
 Given the information above, we can estimate the probability of a student's drug use behavior if they respond **Yes** or **No** to a drug use question.  
  
 To model this probability, we can use the **Bayes theorem:**
+
+\begin{equation}
+\label{eq:bayesa}
+P(A | B) = P(A) \frac{P(B | A)}{P(B)}
+\end{equation}
+
+By replacing the variables of interest:  
+
+* **P(A|B)** = Drug use, given they say yes in the questionnaire.
+* **P(B|A)** = Say yes given that they have used drugs.
+* **P(A)** = Drug use prevalence.
+* **P(B)** = Say yes in the questionnaire.
+
+We present two simulated scenarios to understand how trust in student responses changes based on the proportion of **braggers**, **deniers**, and the **Prevalence of alcohol use**. 
