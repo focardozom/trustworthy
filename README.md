@@ -1,5 +1,5 @@
 # Trustworthy
-# How much do we believe in students who say they have used drugs?
+# How much do we believe in the response of students who say they have used drugs?
 
 [Francisco Cardozo](https://github.com/focardozom), [Pablo Montero-Zamora](https://scholar.google.es/citations?user=jw7I6NUAAAAJ&hl=en)
 
