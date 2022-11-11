@@ -4,13 +4,13 @@
 
 
 Confidence in students' survey responses is commonly questioned when performing drug use research. For example, one's can wonder 
-**how do you know students are telling the truth about their alcohol consumption?** We recognize this as a legitimate question that can be even more complex when considering two types of students: 1) those who say they have not used alcohol but used it (i.e., deniers); and 2) those who say they have used it but actually never use it (i.e., braggers). 
-It is crucial to understand how this reporting bias affects the validity of our measurements and research findings. Therefore, we propose the following app to understand how proportions of deniers, braggers, and drug use prevalence can influence confidence levels in self-reported measures collected in adolescents. 
+**how do you know students are telling the truth about their alcohol consumption?** We recognize this as a legitimate question that can be even more complex when considering two types of students: 1) those who say they have not used alcohol but used it (i.e., deniers), and 2) those who say they have used it but never use it (i.e., braggers). 
+It is crucial to understand how this reporting bias affects the validity of our measurements and research findings. Therefore, we propose the following app to know how the proportions of deniers, braggers, and drug use prevalence can influence confidence levels in self-reported measures collected in adolescents. 
 
 
-* **True prevalence:** number of students using a drug divided by the  population.  
+* **True prevalence:** number of students using a drug divided by the population.  
 * **Deniers:** students who say they have not used a drug but used it. 
-* **Braggers:** students who say they have used a drug but actually never use it. 
+* **Braggers:** students who say they have used a drug but never used it. 
 
 Given the information above, we can estimate the probability of a student's drug use behavior if they respond **Yes** or **No** to a drug use question.  
  

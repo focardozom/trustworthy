@@ -43,7 +43,7 @@ ui <- fluidPage(
                       value = 0.001)
                    ),
             column(8,
-                   plotlyOutput("plot1")
+                   plotOutput("plot1")
                    )
             ),
           br(),
@@ -63,19 +63,18 @@ ui <- fluidPage(
                                max = 0.999,
                                value = 0.999)),
             column(8,
-                   plotlyOutput("plot2")
+                   plotOutput("plot2")
                    )),
           fixedRow(
           "In this setting, the trust is very close to 0%. In settings where the prevalence of drug is 99%, 
           trust increase slightly to 0.09."),
           br(),
           fixedRow(
-          "What happen when the denniers and braggers are 50%?"
+          h3("What happens when deniers and braggers are 50%?")
           ),
           br(),
           fixedRow(
-          "Play with the parameters and see how the propotion of liers
-          in your survey afect your trustwhorty"),
+            "Play with the parameters and see how the proportion of deniers and braggers affects your trustworthiness"),
           br(),
           includeMarkdown("Conclusions.md"),
         )
@@ -122,7 +121,7 @@ server <- function(input, output) {
   
   output$tab <- renderTable(df())
   
-  output$plot1 <- renderPlotly({
+  output$plot1 <- renderPlot({
     
       gr <- ggplot(df(), aes(prevalence, trust, group=group)) +
       geom_line(size=1.2, color="#9966cc") +
@@ -133,13 +132,14 @@ server <- function(input, output) {
       labs(x="Drug prevalence (prevalence)",
            y="Trust") +
         theme_minimal() +
-        theme(plot.background = element_rect(fill = '#f0f8ff'), 
-              panel.background = element_rect(fill = '#f0f8ff'),
-              panel.grid.major = element_line(colour = "grey90"))
-      ggplotly(gr)
+        theme(plot.background = element_rect(fill = '#f0f8ff',
+                                             colour = "#f0f8ff"), 
+              panel.background = element_rect(fill = '#f0f8ff',colour="#f0f8ff"),
+              panel.grid.major = element_line(colour = "grey90")) 
+      gr
   })
   
-    output$plot2 <- renderPlotly({
+    output$plot2 <- renderPlot({
       
       gr <- ggplot(df2(), aes(prevalence, trust, group=group)) +
         geom_line(size=1.2, color="#9966cc") +
@@ -150,11 +150,12 @@ server <- function(input, output) {
         labs(x="Drug prevalence (prevalence)",
              y="Trust") +
         theme_minimal() +
-        theme(plot.background = element_rect(fill = '#f0f8ff'), 
-              panel.background = element_rect(fill = '#f0f8ff'),
+        theme(plot.background = element_rect(fill = '#f0f8ff',
+                                             colour = "#f0f8ff"), 
+              panel.background = element_rect(fill = '#f0f8ff',colour="#f0f8ff"),
               panel.grid.major = element_line(colour = "grey90"))
       
-      ggplotly(gr)
+      gr
   })
     
     
