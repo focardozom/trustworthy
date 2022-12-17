@@ -1,16 +1,15 @@
-# How much do we trust a students' response when asked if they have comsumed drugs?
+# What is the level of trust we have in a student's response when asked about drug consumption?
 
 [Francisco Cardozo](https://github.com/focardozom), [Pablo Montero-Zamora](https://scholar.google.es/citations?user=jw7I6NUAAAAJ&hl=en)
 
+Confidence in students' survey responses is often called into question when researching drug use, as it can be difficult to determine whether students are being truthful about their alcohol consumption and other drug use. We recognize that this is a valid concern, as the accuracy of self-reported drug use data can be affected by various types of reporting biases. For example, some students may underreport their drug use (i.e., deniers), while others may overreport their use (i.e., braggers). It is important to understand how these biases can impact the validity of research findings, and to take steps to minimize their influence.
 
-Confidence in students' survey responses is commonly questioned when performing drug use research. For example, one's can wonder 
-**how do you know students are telling the truth about their alcohol consumption?** We recognize this as a legitimate question that can be even more complex when considering two types of students: 1) those who say they have not used alcohol but used it (i.e., deniers), and 2) those who say they have used it but never use it (i.e., braggers). 
-It is crucial to understand how this reporting bias affects the validity of our measurements and research findings. Therefore, we propose the following app to know how the proportions of deniers, braggers, and drug use prevalence can influence confidence levels in self-reported measures collected in adolescents. 
+As a tool to address the issue of reporting bias in research on drug use in adolescents, we propose a simulation-based app that can help to analyze the potential effects of deniers and braggers at different prevalence levels. This app could be used to better understand how these types of reporting biases can impact the validity of research findings, and to develop strategies for minimizing their influence. By simulating different scenarios and analyzing the results, researchers can gain a clearer understanding of the potential impact of deniers and braggers on research findings and can take appropriate steps to reduce the influence of these biases.
 
 * **True prevalence:** number of students using a drug divided by the population.  
 * **Deniers:** students who say they have not used a drug but used it. 
 * **Braggers:** students who say they have used a drug but never used it. 
 
-Given the information above, we can estimate the probability of a student's drug use behavior if they respond **Yes** or **No** to a drug use question.  
- 
+We can use a student's response to a drug use question, to estimate the probability of their drug use behavior given hypothetical values of deniers, braggers and the true prevalence.
+
 To model this probability, we can use the **Bayes theorem:**

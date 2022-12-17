@@ -47,7 +47,10 @@ ui <- fluidPage(
                    )
             ),
           br(),
-          " In settings where drug use is rare, the trust is around 90%. However, after 10% of prevalence, the trust is 99%. ",
+          "In settings where drug use is rare, trust in student
+          responses is typically around 90%. However, when 
+          the prevalence of drug use increases to 10%, 
+          the trust in student responses increases to 99%",
           br(),
           h2("Second scenario: almost everybody lies"),
           fixedRow(
@@ -66,15 +69,19 @@ ui <- fluidPage(
                    plotOutput("plot2")
                    )),
           fixedRow(
-          "In this setting, the trust is very close to 0%. In settings where the prevalence of drug is 99%, 
-          trust increase slightly to 0.09."),
+          "In a setting where lying is the norm, trust is very low. 
+          However, if the use of drugs is also very common, trust may increase slightly."),
           br(),
           fixedRow(
-          h3("What happens when deniers and braggers are 50%?")
+          h4("What happens when 50%-50% of the students are deniers and braggers?")
           ),
           br(),
           fixedRow(
-            "Play with the parameters and see how the proportion of deniers and braggers affects your trustworthiness"),
+            "You can try changing the proportions of deniers and braggers 
+            in the simulation and observe how it affects the trustworthiness
+            of the data. This can be a helpful way to understand the impact of 
+            these types of reporting biases and to identify strategies for 
+            minimizing their influence."),
           br(),
           includeMarkdown("Conclusions.md"),
         )
